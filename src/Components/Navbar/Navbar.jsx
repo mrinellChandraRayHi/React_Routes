@@ -12,15 +12,19 @@ const Navbar = () => {
         { id: 5, name: 'Dashboard', path: '/dashboard' }
     ];
     return (
-        <nav>
-            <div  className="md:hidden text-2xl" onClick={()=>setOpen(!open)} >{
-                open===true? <RiCloseFill />: <RiMenu2Line/>
-            }
-            </div>
-            <ul className="md:flex">
-                {routes.map(link=><Link key={link.id} link={link}/>)}
-            </ul>
-        </nav>
+        <div>
+            <nav className="bg-blue-800 py-5">
+                <div  className="md:hidden text-2xl" onClick={()=>setOpen(!open)} >{
+                    open===true? <RiCloseFill />: <RiMenu2Line/>
+                }
+                </div>
+                <ul className={`md:flex absolute md:static top-16 sm:bg-green-800 md:bg-blue-700 sm:w-[200px] py-2 text-white text-center rounded-lg sm:shadow-2xl ${open?'top-16': '-top-60'} duration-1000`}>
+                    {routes.map(link=><Link key={link.id} link={link}/>)}
+                </ul>
+            </nav>
+            {/* need ppppp tag */}
+            {/* <p>Lorem ipsum dolor sit amet consectetur.</p> */}
+        </div>
     );
 };
 

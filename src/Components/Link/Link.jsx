@@ -3,7 +3,7 @@ const Link = ({link}) => {
     const {name, path}=link
     return (
         <div>
-            <li className="mr-3"><a href={path}>{name}</a></li>
+            <li className="mr-3 hover:bg-lime-400"><a href={path}>{name}</a></li>
         </div>
     );
 };
